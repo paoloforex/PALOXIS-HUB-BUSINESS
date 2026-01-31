@@ -1,29 +1,52 @@
 import requests
+import time
 
-# CONFIGURAZIONE PALOXIS HUB
 TOKEN = "8380699103:AAHRPHc0t4hdiuhr-uaJGDlmO4kDa0LxusE"
-CHAT_ID = "638656123" # Ricorda di mettere il tuo ID reale o quello del gruppo
+
+# RETE BERSAGLI PALOXIS NEXUS (4 GRUPPI + CONTROLLO)
+GRUPPI = [
+    "638656123",           # Il tuo ID (Monitor)
+    "-1001669188418",      # Guadagno soldi online
+    "-1002228507073",      # GUADAGNARE ONLINE
+    "-1002574569776",      # BUONI GRATIS
+    "-1003381479423"       # Nuovo Gruppo
+]
 
 def hunt():
+    # Messaggio studiato per massimizzare i click sui tuoi 3 profili
     messaggio = (
-        "🔥 **PALOXIS NEXUS - GUADAGNO IMMEDIATO** 🔥\n\n"
-        "Non stare a guardare, preleva i tuoi bonus ora. Ecco la lista aggiornata:\n\n"
-        "🏦 **BBVA:** 10€ subito + Cashback\n"
+        "🚀 **PROTOCOLLO GUADAGNO PALOXIS** 🚀\n\n"
+        "Non stare a guardare gli altri che incassano. Ecco i bonus di OGGI:\n\n"
+        "🏦 **BBVA: 50€ DI BENVENUTO**\n"
+        "10€ Subito + 40€ di Cashback (Rimborsi spesa).\n"
         "👉 Codice: `77620062590929`\n\n"
-        "💳 **REVOLUT:** Bonus variabile (fino a 60-100€)\n"
+        
+        "💳 **REVOLUT: BONUS CASH**\n"
+        "Registrati e attiva la carta dal link ufficiale.\n"
         "👉 Link: https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL\n\n"
-        "🐶 **BUDDYBANK:** Bonus iscrizione\n"
+        
+        "🐶 **BUDDYBANK (UniCredit):**\n"
         "👉 Codice: `B2601MP72BOYH9`\n\n"
-        "💎 **ISYBANK:** Bonus benvenuto\n"
+        
+        "💎 **ISYBANK:**\n"
         "👉 Codice: `8ACGT2HQVT`\n\n"
-        "📈 **TRADING 212:** Azione gratuita in arrivo\n"
-        "👉 Chiedimi info per la riattivazione!\n\n"
-        "⚠️ *Posti limitati per ogni codice. Se non funziona uno, usa l'altro!*"
+        "⚠️ *Messaggio automatico. Promo valide finché i codici sono attivi.*"
     )
     
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    data = {"chat_id": CHAT_ID, "text": messaggio, "parse_mode": "Markdown"}
-    requests.post(url, data=data)
+    for chat_id in GRUPPI:
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        data = {"chat_id": chat_id, "text": messaggio, "parse_mode": "Markdown"}
+        try:
+            r = requests.post(url, data=data)
+            if r.status_code == 200:
+                print(f"✅ Inviato con successo a: {chat_id}")
+            else:
+                print(f"❌ Errore su {chat_id}: {r.text}")
+        except Exception as e:
+            print(f"🚨 Errore connessione: {e}")
+        
+        # Piccolo delay di 2 secondi per evitare il ban di Telegram
+        time.sleep(2)
 
 if __name__ == "__main__":
     hunt()
