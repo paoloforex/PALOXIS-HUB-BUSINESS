@@ -1,0 +1,15 @@
+import time
+
+def hunt():
+    print("--- PALOXIS HUB HUNTER v1.0 ---")
+    # Messaggio ottimizzato per PALOXIS HUB
+    MESSAGE = "Ciao! Se vuoi prelevare i bonus attivi (150€ cash), trovi tutto su PALOXIS HUB. I codici scadono presto: https://paoloforex.github.io/PALOXIS-HUB-BUSINESS/"
+    
+    print(f"Messaggio pronto: {MESSAGE}")
+    print("Ricerca lead in corso...")
+    # Qui il bot farà il suo lavoro
+    time.sleep(1)
+    print("Invio completato.")
+
+if __name__ == "__main__":
+    hunt()
