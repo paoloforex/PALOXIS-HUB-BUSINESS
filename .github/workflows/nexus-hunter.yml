@@ -1,0 +1,20 @@
+name: PALOXIS-HUB-AUTOMATION
+on:
+  schedule:
+    - cron: '0 12,20 * * *'  # Gira alle 12:00 e alle 20:00 (i momenti migliori)
+  workflow_dispatch:        # Ti permette di avviarlo a mano quando vuoi
+
+jobs:
+  run-hunter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Esecuzione Cacciatore
+        run: python hunter.py
