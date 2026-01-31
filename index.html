@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PALOXIS HUB - Official System</title>
+    <title>PALOXIS HUB - Official Business System</title>
+    
+    <meta name="description" content="PALOXIS HUB: Preleva 150€ di bonus cash + 30€ Amazon. BBVA scade OGGI 31 Gennaio! Usa il codice 77620062590929.">
+    <meta name="keywords" content="bonus bbva 2026, codice revolut, guadagno online subito, paloxis hub, buddybank codice amico">
+    <meta property="og:title" content="💰 PALOXIS HUB - 150€ DISPONIBILI ORA">
+    <meta property="og:description" content="Ultimo giorno per il bonus BBVA. Entra, copia i codici e incassa subito.">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,7 +35,6 @@
             padding: 80px 20px;
             text-align: center;
             border-bottom: 2px solid var(--neon-green);
-            position: relative;
         }
 
         .neon-title {
@@ -38,9 +44,9 @@
             background: linear-gradient(90deg, var(--neon-green), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(0,255,136,0.4));
             font-weight: 900;
             letter-spacing: 5px;
+            filter: drop-shadow(0 0 15px rgba(0,255,136,0.3));
         }
 
         .bottino-box {
@@ -51,15 +57,6 @@
             border-radius: 15px;
             background: rgba(255,215,0,0.05);
             box-shadow: 0 0 20px rgba(255,215,0,0.1);
-        }
-
-        .bottino-label {
-            color: var(--gold);
-            font-size: 0.8rem;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
         }
 
         #live-total {
@@ -83,7 +80,6 @@
             margin: 60px 0 30px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 1.2rem;
         }
 
         .card {
@@ -92,15 +88,13 @@
             padding: 30px;
             border-radius: 20px;
             margin-bottom: 30px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            overflow: hidden;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .card:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             border-color: var(--neon-green);
-            box-shadow: 0 10px 30px rgba(0,255,136,0.1);
         }
 
         .badge {
@@ -114,16 +108,13 @@
             text-transform: uppercase;
         }
 
-        .badge-cash { background: var(--gold); color: #000; }
-        .badge-amazon { background: #ff9900; color: #fff; }
         .badge-urgent { background: #ff4444; color: #fff; animation: pulse 1.5s infinite; }
-
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* SISTEMA DI COPIA */
         .copy-box {
             background: #000;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border-radius: 12px;
             border: 1px solid #444;
             margin: 20px 0;
@@ -134,7 +125,7 @@
 
         .code-display {
             font-family: monospace;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--neon-green);
             font-weight: bold;
         }
@@ -147,11 +138,11 @@
             border-radius: 8px;
             font-weight: 900;
             cursor: pointer;
-            transition: 0.2s;
+            text-transform: uppercase;
             font-size: 0.7rem;
         }
 
-        .btn {
+        .btn-main {
             display: block;
             text-align: center;
             background: linear-gradient(90deg, var(--neon-green), #00cc6a);
@@ -164,224 +155,167 @@
             transition: 0.3s;
         }
 
-        /* CHAT INTEGRATA AUTOMATICA */
-        #chat-trigger {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--neon-green);
-            color: #000;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .btn-share {
+            background: #25D366;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,255,136,0.4);
-            z-index: 9999;
-            font-size: 24px;
-        }
-
-        #chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 330px;
-            height: 480px;
-            background: #1e1e1e;
-            border: 2px solid var(--neon-green);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-            display: none;
-            flex-direction: column;
-            z-index: 1001;
-            overflow: hidden;
-        }
-
-        #chat-header {
-            background: var(--neon-green);
-            color: #000;
-            padding: 15px;
-            font-weight: 900;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #chat-body {
-            flex-grow: 1;
-            padding: 15px;
-            overflow-y: auto;
-            background: #161616;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .bot-msg, .user-msg {
-            padding: 10px 14px;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 20px;
             border-radius: 15px;
-            max-width: 85%;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
         }
 
-        .bot-msg { background: #333; align-self: flex-start; }
-        .user-msg { background: var(--neon-green); color: #000; align-self: flex-end; }
-
-        #chat-footer {
-            padding: 10px;
-            background: #000;
-            display: flex;
-            gap: 8px;
-            align-items: center;
+        /* CHAT ASSISTENTE */
+        #chat-trigger {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--neon-green); color: #000;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: 0 5px 20px rgba(0,255,136,0.5); z-index: 9999;
         }
 
-        #chat-input {
-            flex-grow: 1;
-            background: transparent;
-            border: none;
-            color: #fff;
-            outline: none;
-            font-size: 0.85rem;
+        #chat-window {
+            position: fixed; bottom: 100px; right: 30px;
+            width: 330px; height: 450px; background: #1e1e1e;
+            border: 2px solid var(--neon-green); border-radius: 20px;
+            display: none; flex-direction: column; overflow: hidden; z-index: 9999;
         }
 
-        .terminated { opacity: 0.4; filter: grayscale(1); pointer-events: none; }
+        .terminated { opacity: 0.3; filter: grayscale(1); pointer-events: none; }
     </style>
 </head>
 <body>
 
 <div class="header">
     <h1 class="neon-title">PALOXIS HUB</h1>
-    <p style="letter-spacing: 5px; color: #666; font-weight: bold; margin-top: 10px;">PRELEVA IL TUO BONUS ORA</p>
     <div class="bottino-box">
-        <span class="bottino-label">Contanti Totali Disponibili</span>
+        <span style="color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Totale Prelevabile</span><br>
         <span id="live-total">150€ + BONUS</span>
     </div>
-    <p style="font-size: 0.8rem; color: var(--neon-green); margin-top: 20px; font-weight: bold;">
-        ● SISTEMA MONITORATO: <span id="date-now"></span>
-    </p>
+    <p style="color: var(--neon-green); margin-top: 20px; font-weight: bold;">AGGIORNATO AL: <span id="date-now"></span></p>
 </div>
 
 <div class="container">
-    <h2 class="section-title">💵 SOLDI SUBITO (CASH)</h2>
-    
-    <div class="card">
-        <span class="badge badge-cash">CASH ISTANTANEO</span>
-        <h3>REVOLUT</h3>
-        <p>Ottieni 50€ cash. Clicca il link ufficiale sotto.</p>
-        <div class="copy-box">
-            <span class="code-display">pgallo!FEB1-26-AR-MDL-CTRL</span>
-            <button class="copy-btn" onclick="copy('pgallo!FEB1-26-AR-MDL-CTRL', this)">COPIA</button>
-        </div>
-        <a href="https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL" target="_blank" class="btn">ATTIVA REVOLUT</a>
-    </div>
+    <a href="whatsapp://send?text=Preleva 150€ subito su PALOXIS HUB. BBVA scade oggi! Entra qui: https://paoloforex.github.io/PALOXIS-HUB-BUSINESS/" class="btn-share">
+        📢 SPONSORIZZA SUI GRUPPI (AUTO-ADS)
+    </a>
+
+    <h2 class="section-title">💵 SOLDI CASH (VERIFICATI)</h2>
 
     <div class="card">
-        <span class="badge badge-cash">BONUS CASH</span>
-        <h3>BUDDYBANK</h3>
-        <p>Usa il codice amico per ricevere il bonus.</p>
-        <div class="copy-box">
-            <span class="code-display">B2601MP72BOYH9</span>
-            <button class="copy-btn" onclick="copy('B2601MP72BOYH9', this)">COPIA</button>
-        </div>
-        <a href="https://www.buddybank.com/" target="_blank" class="btn">SCARICA BUDDYBANK</a>
+        <span class="badge" style="background: var(--gold); color:#000;">CONSIGLIATO</span>
+        <h3>REVOLUT (50€)</h3>
+        <p>Ottieni 50€ cash. Apri il conto e fai 3 acquisti da 1€.</p>
+        <a href="https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL" target="_blank" class="btn-main">APRI REVOLUT</a>
     </div>
 
-    <div id="bbva-card" class="card">
-        <span id="bbva-badge" class="badge badge-urgent">SCADENZA OGGI</span>
-        <h3>BBVA</h3>
-        <p>Inserisci il codice nel campo "Passaparola".</p>
+    <div class="card" id="bbva-card">
+        <span id="bbva-badge" class="badge badge-urgent">SCADE OGGI</span>
+        <h3>BBVA (50€ CASH)</h3>
+        <p>Inserisci il codice nel campo "Passaparola" durante l'apertura.</p>
         <div class="copy-box">
             <span class="code-display">77620062590929</span>
             <button class="copy-btn" onclick="copy('77620062590929', this)">COPIA</button>
         </div>
-        <a href="https://www.bbva.it/" target="_blank" class="btn" style="background: #ff4444; color: #fff;">APRI ORA</a>
+        <a href="https://www.bbva.it/" target="_blank" class="btn-main" style="background:#ff4444; color:#fff;">INCASSA PRIMA DI MEZZANOTTE</a>
     </div>
 
-    <h2 class="section-title">📦 BONUS AMAZON</h2>
-    
     <div class="card">
-        <span class="badge badge-amazon">BUONO 30€</span>
-        <h3>ISYBANK</h3>
+        <h3>BUDDYBANK (50€ CASH)</h3>
+        <p>Usa il codice amico per ricevere il bonus cash sul conto.</p>
+        <div class="copy-box">
+            <span class="code-display">B2601MP72BOYH9</span>
+            <button class="copy-btn" onclick="copy('B2601MP72BOYH9', this)">COPIA</button>
+        </div>
+        <a href="https://www.buddybank.com/" target="_blank" class="btn-main">SCARICA APP</a>
+    </div>
+
+    <h2 class="section-title">📦 SHOPPING GRATIS</h2>
+
+    <div class="card">
+        <h3>ISYBANK (30€ AMAZON)</h3>
         <div class="copy-box">
             <span class="code-display">8ACGT2HQVT</span>
             <button class="copy-btn" onclick="copy('8ACGT2HQVT', this)">COPIA</button>
         </div>
-        <a href="https://www.isybank.com/" target="_blank" class="btn" style="background: #ff9900; color: #fff;">RISCATTA BUONO</a>
+        <a href="https://www.isybank.com/" target="_blank" class="btn-main" style="background: #ff9900; color: #fff;">PRENDI IL BUONO</a>
     </div>
 
-    <h2 class="section-title" style="color: #444;">⏳ MONITORAGGIO</h2>
+    <h2 class="section-title" style="color:#555;">⏳ IN ARRIVO / MONITORAGGIO</h2>
     
-    <div class="card" id="trading-card">
-        <span class="badge" style="background: #555;">PROMO AZIONI</span>
+    <div class="card">
+        <span class="badge" style="background: #444;">MONITORING</span>
         <h3>TRADING 212</h3>
-        <p>Stiamo monitorando la riattivazione della promo azioni gratuite.</p>
-        <div class="copy-box" style="opacity: 0.5;">
-            <span class="code-display">MONITORING...</span>
-        </div>
+        <p>Stiamo verificando la riattivazione della promo azioni gratuite (fino a 100€).</p>
     </div>
 </div>
 
 <div id="chat-trigger" onclick="toggleChat()">💬</div>
-
-<div id="chat-widget">
-    <div id="chat-header">
+<div id="chat-window">
+    <div style="background:var(--neon-green); padding:15px; color:#000; font-weight:900; display:flex; justify-content:space-between;">
         <span>PALOXIS AI ADVISOR</span>
-        <span onclick="toggleChat()" style="cursor:pointer;">&times;</span>
+        <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
     </div>
-    <div id="chat-body">
-        <div class="bot-msg">Benvenuto nel PALOXIS HUB. Sono l'AI ufficiale.</div>
-        <div class="bot-msg" id="ai-alert">Oggi è il 31 Gennaio: Fai **BBVA** subito, scade a mezzanotte!</div>
+    <div id="chat-body" style="flex-grow:1; padding:15px; overflow-y:auto; background:#161616; display:flex; flex-direction:column; gap:10px;">
+        <div style="background:#333; padding:10px; border-radius:10px; align-self:flex-start; font-size:0.9rem;">
+            Benvenuto. Sono l'AI di PALOXIS. Se hai errori manda uno screenshot o chiedimi del bonus BBVA.
+        </div>
     </div>
-    <div id="chat-footer">
-        <input type="file" id="shot" style="display:none" onchange="addMsg('<i>Hai inviato uno screenshot. Analisi...</i>', 'user'); setTimeout(()=>addMsg('Screenshot ricevuto. Assicurati di aver messo il codice corretto.', 'bot'), 1500)">
-        <button onclick="document.getElementById('shot').click()" style="background: #222; color: var(--neon-green); border: 1px solid var(--neon-green); border-radius: 5px; cursor: pointer; padding: 5px;">📸</button>
-        <input type="text" id="chat-input" placeholder="Scrivi qui...">
-        <button onclick="sendChat()" style="background: var(--neon-green); border:none; padding: 5px 10px; border-radius: 5px; cursor:pointer; font-weight:bold;">></button>
+    <div style="padding:10px; background:#000; display:flex; gap:5px;">
+        <input type="file" id="shot" style="display:none" onchange="addMsg('<i>Screenshot inviato per analisi...</i>', 'user')">
+        <button onclick="document.getElementById('shot').click()" style="background:#222; color:var(--neon-green); border:1px solid var(--neon-green); border-radius:5px; padding:5px; cursor:pointer;">📸</button>
+        <input type="text" id="chat-in" placeholder="Scrivi..." style="flex-grow:1; background:transparent; border:none; color:#fff; outline:none;">
+        <button onclick="send()" style="background:var(--neon-green); border:none; padding:5px 10px; border-radius:5px; font-weight:bold; cursor:pointer;">></button>
     </div>
 </div>
 
 <script>
     const d = new Date();
-    document.getElementById('date-now').innerText = d.toLocaleDateString('it-IT', {day:'numeric', month:'long', year:'numeric'});
+    document.getElementById('date-now').innerText = d.toLocaleDateString('it-IT');
 
     function copy(t, b) {
         navigator.clipboard.writeText(t);
         const old = b.innerText; b.innerText = "OK!";
-        setTimeout(()=> b.innerText = old, 2000);
+        setTimeout(() => b.innerText = old, 2000);
     }
 
     function toggleChat() {
-        const c = document.getElementById('chat-widget');
-        c.style.display = (c.style.display === 'flex') ? 'none' : 'flex';
+        const w = document.getElementById('chat-window');
+        w.style.display = (w.style.display === 'flex') ? 'none' : 'flex';
     }
 
     function addMsg(t, s) {
         const m = document.createElement('div');
-        m.className = (s === 'user') ? 'user-msg' : 'bot-msg';
+        m.style.padding = "10px"; m.style.borderRadius = "10px"; m.style.maxWidth = "85%"; m.style.fontSize = "0.85rem";
+        m.style.alignSelf = (s==='user') ? "flex-end" : "flex-start";
+        m.style.background = (s==='user') ? "var(--neon-green)" : "#333";
+        m.style.color = (s==='user') ? "#000" : "#fff";
         m.innerHTML = t;
         document.getElementById('chat-body').appendChild(m);
         document.getElementById('chat-body').scrollTop = 9999;
     }
 
-    function sendChat() {
-        const i = document.getElementById('chat-input');
+    function send() {
+        const i = document.getElementById('chat-in');
         const v = i.value.toLowerCase(); if(!v) return;
         addMsg(i.value, 'user'); i.value = '';
-        setTimeout(()=> {
-            let r = "Analisi... Segui le istruzioni nell'HUB per incassare.";
-            if(v.includes('bbva')) r = "Codice BBVA: 77620062590929. Scade stasera!";
-            if(v.includes('revolut')) r = "Revolut: usa il link verde e fai 3 acquisti da 1€.";
+        setTimeout(() => {
+            let r = "Analisi in corso... Verifica di inserire il codice correttamente nell'app.";
+            if(v.includes('bbva')) r = "Il codice BBVA è 77620062590929. Sbrigati, scade a mezzanotte!";
             addMsg(r, 'bot');
         }, 800);
     }
 
+    // AUTO-TERMINAZIONE BBVA
     if (d >= new Date('2026-02-01')) {
         document.getElementById('bbva-card').classList.add('terminated');
+        document.getElementById('bbva-badge').innerText = "SCADUTO";
         document.getElementById('live-total').innerText = "100€ + BONUS";
-        document.getElementById('ai-alert').innerText = "BBVA è scaduta. Vai su Revolut e Buddybank!";
     }
 </script>
 
