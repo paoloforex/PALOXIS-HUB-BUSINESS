@@ -1,8 +1,8 @@
 name: PALOXIS-HUB-AUTOMATION
 on:
   schedule:
-    - cron: '0 12,20 * * *'
-  workflow_dispatch:
+    - cron: '*/15 * * * *'  # Gira automaticamente ogni 15 minuti, h24
+  workflow_dispatch:        # Ti permette di avviarlo tu quando vuoi premendo il tasto
 
 jobs:
   run-hunter:
@@ -20,4 +20,4 @@ jobs:
         run: pip install requests
 
       - name: Esecuzione Cacciatore
-        run: python hunter.py
+        run: python hunter/hunter.py
