@@ -1,31 +1,29 @@
 import requests
-import time
 
 # CONFIGURAZIONE PALOXIS HUB
 TOKEN = "8380699103:AAHRPHc0t4hdiuhr-uaJGDlmO4kDa0LxusE"
-# Sostituisci 'IL_TUO_CHAT_ID' con il tuo ID se vuoi ricevere notifiche, 
-# oppure lo useremo per inviare ai gruppi.
-CHAT_ID = "638656123" # Questo è un esempio, lo useremo per i test
-
-def invia_messaggio(testo):
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    data = {"chat_id": CHAT_ID, "text": testo, "parse_mode": "Markdown"}
-    try:
-        r = requests.post(url, data=data)
-        print(f"Risposta invio: {r.status_code}")
-    except Exception as e:
-        print(f"Errore: {e}")
+CHAT_ID = "638656123" # Ricorda di mettere il tuo ID reale o quello del gruppo
 
 def hunt():
-    print("--- PALOXIS HUB HUNTER ATTIVO ---")
     messaggio = (
-        "💰 *BONUS ATTIVI SU PALOXIS HUB*\n\n"
-        "Hai già prelevato i tuoi bonus? BBVA e Revolut sono attivi ora.\n"
-        "Non perdere tempo, i posti sono limitati.\n\n"
-        "🔗 *ACCEDI QUI:* https://paoloforex.github.io/PALOXIS-HUB-BUSINESS/"
+        "🔥 **PALOXIS NEXUS - GUADAGNO IMMEDIATO** 🔥\n\n"
+        "Non stare a guardare, preleva i tuoi bonus ora. Ecco la lista aggiornata:\n\n"
+        "🏦 **BBVA:** 10€ subito + Cashback\n"
+        "👉 Codice: `77620062590929`\n\n"
+        "💳 **REVOLUT:** Bonus variabile (fino a 60-100€)\n"
+        "👉 Link: https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL\n\n"
+        "🐶 **BUDDYBANK:** Bonus iscrizione\n"
+        "👉 Codice: `B2601MP72BOYH9`\n\n"
+        "💎 **ISYBANK:** Bonus benvenuto\n"
+        "👉 Codice: `8ACGT2HQVT`\n\n"
+        "📈 **TRADING 212:** Azione gratuita in arrivo\n"
+        "👉 Chiedimi info per la riattivazione!\n\n"
+        "⚠️ *Posti limitati per ogni codice. Se non funziona uno, usa l'altro!*"
     )
-    invia_messaggio(messaggio)
-    print("Caccia completata. Messaggio inviato.")
+    
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    data = {"chat_id": CHAT_ID, "text": messaggio, "parse_mode": "Markdown"}
+    requests.post(url, data=data)
 
 if __name__ == "__main__":
     hunt()
