@@ -1,8 +1,8 @@
 name: PALOXIS-HUB-AUTOMATION
 on:
   schedule:
-    - cron: '0 12,20 * * *'  # Gira alle 12:00 e alle 20:00 (i momenti migliori)
-  workflow_dispatch:        # Ti permette di avviarlo a mano quando vuoi
+    - cron: '0 12,20 * * *'
+  workflow_dispatch:
 
 jobs:
   run-hunter:
@@ -15,6 +15,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install requests
 
       - name: Esecuzione Cacciatore
         run: python hunter.py
