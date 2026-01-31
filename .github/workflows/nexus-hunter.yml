@@ -1,7 +1,7 @@
 name: PALOXIS-HUB-AUTOMATION
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Gira ogni 15 minuti per massima efficienza
+    - cron: '*/15 * * * *'  # Gira ogni 15 minuti, 24 ore su 24
   workflow_dispatch:
 
 jobs:
@@ -20,8 +20,4 @@ jobs:
         run: pip install requests
 
       - name: Esecuzione Cacciatore
-        run: |
-          # Cerca il file anche se ha punti extra o maiuscole
-          FILE=$(find . -maxdepth 2 -iname "hunter.py*" -print -quit)
-          echo "File trovato: $FILE"
-          python "$FILE"
+        run: python Hunter.py
