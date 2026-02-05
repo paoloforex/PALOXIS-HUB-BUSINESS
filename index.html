@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PALOXIS HUB - Official Business System</title>
     
-    <meta name="description" content="PALOXIS HUB: Preleva 180€ di bonus cash + 30€ Amazon. Usa il codice 77620062590929.">
+    <meta name="description" content="PALOXIS HUB: Sistema automatico per prelevare bonus cash certificati.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,6 +13,7 @@
             --gold: #ffd700;
             --dark-bg: #0a0a0a;
             --card-bg: #161616;
+            --step-bg: #1e1e1e;
         }
 
         body {
@@ -87,15 +88,33 @@
             border-color: var(--neon-green);
         }
 
-        .badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 6px 12px;
-            border-radius: 50px;
-            font-size: 0.7rem;
+        .guide-steps {
+            background: var(--step-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px dashed var(--gold);
+        }
+
+        .step {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 12px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .step-num {
+            background: var(--gold);
+            color: #000;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            text-transform: uppercase;
+            font-size: 0.8rem;
         }
 
         .copy-box {
@@ -103,7 +122,7 @@
             padding: 12px 18px;
             border-radius: 12px;
             border: 1px solid #444;
-            margin: 20px 0;
+            margin: 15px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -124,6 +143,7 @@
             border-radius: 8px;
             font-weight: 900;
             cursor: pointer;
+            transition: 0.2s;
         }
 
         .btn-main {
@@ -149,11 +169,7 @@
             text-decoration: none;
             font-weight: 900;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 10px;
             z-index: 9999;
-            transition: 0.3s;
         }
     </style>
 </head>
@@ -163,7 +179,7 @@
     <h1 class="neon-title">PALOXIS HUB</h1>
     <div class="bottino-box">
         <span style="color: var(--gold); font-size: 0.8rem; text-transform: uppercase;">Totale Prelevabile</span><br>
-        <span id="live-total">180€ + BONUS</span>
+        <span id="live-total">150€ + BONUS</span>
     </div>
 </div>
 
@@ -171,31 +187,53 @@
     <h2 class="section-title">💵 SOLDI CASH (ATTIVI)</h2>
 
     <div class="card">
-        <span class="badge" style="background: var(--gold); color:#000;">HOT</span>
+        <span class="badge" style="position: absolute; top: 20px; right: 20px; background: var(--gold); color:#000; padding: 5px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: bold;">HOT</span>
         <h3>REVOLUT (50€)</h3>
-        <p>Ottieni 50€ cash. Apri il conto dal link e segui i passaggi indicati.</p>
-        <a href="https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL" target="_blank" class="btn-main">APRI REVOLUT</a>
+        <div class="guide-steps">
+            <div class="step"><div class="step-num">1</div><span>Registrati tramite il tasto sotto col tuo numero.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Verifica l'identità e ricarica almeno 20€ sul conto.</span></div>
+            <div class="step"><div class="step-num">3</div><span>Ordina la carta fisica e fai 3 pagamenti da almeno 5€ (puoi usare la carta virtuale subito).</span></div>
+        </div>
+        <a href="https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL" target="_blank" class="btn-main">SBLOCCA REVOLUT</a>
     </div>
 
     <div class="card">
-        <span class="badge" style="background: var(--neon-green); color:#000;">VERIFICATO</span>
-        <h3>BBVA (50€ CASH)</h3>
-        <p>Ricevi 50€ inserendo il codice nel campo "Passaparola" durante l'apertura.</p>
+        <span class="badge" style="position: absolute; top: 20px; right: 20px; background: #0052ff; color:#fff; padding: 5px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: bold;">CRYPTO</span>
+        <h3>COINBASE (20€)</h3>
+        <div class="guide-steps">
+            <div class="step"><div class="step-num">1</div><span>Crea un account dal link ufficiale e verifica il documento.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Effettua un primo acquisto crypto di qualsiasi importo (anche 1€).</span></div>
+            <div class="step"><div class="step-num">3</div><span>Ricevi 20€ di bonus in crypto convertibili subito in euro.</span></div>
+        </div>
+        <a href="https://coinbase.com/join/4PDVDNS?src=ios-link" target="_blank" class="btn-main" style="background: #0052ff; color: #fff;">SBLOCCA COINBASE</a>
+    </div>
+
+    <div class="card">
+        <h3>BBVA (10€ CASH)</h3>
         <div class="copy-box">
             <span class="code-display">77620062590929</span>
             <button class="copy-btn" onclick="copy('77620062590929', this)">COPIA</button>
         </div>
-        <a href="https://www.bbva.it/" target="_blank" class="btn-main">INCASSA 50€ ORA</a>
+        <div class="guide-steps">
+            <div class="step"><div class="step-num">1</div><span>Apri il conto e inserisci il codice nel campo <b>"Passaparola"</b>.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Fai un acquisto di qualsiasi importo con la carta (anche 0,10€).</span></div>
+            <div class="step"><div class="step-num">3</div><span>Ricevi l'accredito cash direttamente sul tuo saldo.</span></div>
+        </div>
+        <a href="https://www.bbva.it/" target="_blank" class="btn-main">SBLOCCA BBVA</a>
     </div>
 
     <div class="card">
         <h3>BUDDYBANK (50€ CASH)</h3>
-        <p>Usa il codice amico per sbloccare il tuo bonus cash immediatamente.</p>
         <div class="copy-box">
             <span class="code-display">B2601MP72BOYH9</span>
             <button class="copy-btn" onclick="copy('B2601MP72BOYH9', this)">COPIA</button>
         </div>
-        <a href="https://www.buddybank.com/" target="_blank" class="btn-main">SCARICA APP</a>
+        <div class="guide-steps">
+            <div class="step"><div class="step-num">1</div><span>Scarica l'app e apri il conto "Genius Buddy" con il codice sopra.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Effettua una transazione di almeno 10€ con la carta MyOne.</span></div>
+            <div class="step"><div class="step-num">3</div><span>Il bonus cash verrà accreditato sul tuo nuovo conto.</span></div>
+        </div>
+        <a href="https://www.buddybank.com/" target="_blank" class="btn-main">SBLOCCA BUDDY</a>
     </div>
 
     <h2 class="section-title">📦 SHOPPING GRATIS</h2>
@@ -206,7 +244,12 @@
             <span class="code-display">8ACGT2HQVT</span>
             <button class="copy-btn" onclick="copy('8ACGT2HQVT', this)">COPIA</button>
         </div>
-        <a href="https://www.isybank.com/" target="_blank" class="btn-main" style="background: #ff9900; color: #fff;">PRENDI IL BUONO</a>
+        <div class="guide-steps">
+            <div class="step"><div class="step-num">1</div><span>Attiva il piano isyLight (Gratis) dall'app Isybank.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Entra in <b>isyReward</b> e inserisci il codice amico.</span></div>
+            <div class="step"><div class="step-num">3</div><span>Conferma e ricevi il tuo buono Amazon da 30€.</span></div>
+        </div>
+        <a href="https://www.isybank.com/" target="_blank" class="btn-main" style="background: #ff9900; color: #fff;">SBLOCCA AMAZON</a>
     </div>
 </div>
 
@@ -217,8 +260,8 @@
 <script>
     function copy(t, b) {
         navigator.clipboard.writeText(t);
-        const old = b.innerText; b.innerText = "OK!";
-        setTimeout(() => b.innerText = old, 2000);
+        const old = b.innerText; b.innerText = "COPIATO!";
+        setTimeout(() => b.innerText = "COPIA", 2000);
     }
 </script>
 
