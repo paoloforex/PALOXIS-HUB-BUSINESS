@@ -81,11 +81,6 @@
             border-radius: 20px;
             margin-bottom: 30px;
             position: relative;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--neon-green);
         }
 
         .guide-steps {
@@ -117,6 +112,18 @@
             font-size: 0.8rem;
         }
 
+        .timer-badge {
+            display: inline-block;
+            background: rgba(255,215,0,0.1);
+            color: var(--gold);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 10px;
+            border: 1px solid var(--gold);
+        }
+
         .copy-box {
             background: #000;
             padding: 12px 18px;
@@ -143,7 +150,6 @@
             border-radius: 8px;
             font-weight: 900;
             cursor: pointer;
-            transition: 0.2s;
         }
 
         .btn-main {
@@ -168,7 +174,6 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 900;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
             z-index: 9999;
         }
     </style>
@@ -187,25 +192,24 @@
     <h2 class="section-title">💵 SOLDI CASH (ATTIVI)</h2>
 
     <div class="card">
-        <span class="badge" style="position: absolute; top: 20px; right: 20px; background: var(--gold); color:#000; padding: 5px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: bold;">HOT</span>
         <h3>REVOLUT (50€)</h3>
         <div class="guide-steps">
-            <div class="step"><div class="step-num">1</div><span>Registrati tramite il tasto sotto col tuo numero.</span></div>
-            <div class="step"><div class="step-num">2</div><span>Verifica l'identità e ricarica almeno 20€ sul conto.</span></div>
-            <div class="step"><div class="step-num">3</div><span>Ordina la carta fisica e fai 3 pagamenti da almeno 5€ (puoi usare la carta virtuale subito).</span></div>
+            <div class="step"><div class="step-num">1</div><span>Registrati tramite il tasto sotto.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Verifica identità e ricarica 20€.</span></div>
+            <div class="step"><div class="step-num">3</div><span>Ordina la carta fisica e fai 3 pagamenti da min. 5€.</span></div>
         </div>
         <a href="https://revolut.com/referral/?referral-code=pgallo!FEB1-26-AR-MDL-CTRL" target="_blank" class="btn-main">SBLOCCA REVOLUT</a>
     </div>
 
     <div class="card">
-        <span class="badge" style="position: absolute; top: 20px; right: 20px; background: #0052ff; color:#fff; padding: 5px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: bold;">CRYPTO</span>
         <h3>COINBASE (20€)</h3>
         <div class="guide-steps">
-            <div class="step"><div class="step-num">1</div><span>Crea un account dal link ufficiale e verifica il documento.</span></div>
-            <div class="step"><div class="step-num">2</div><span>Effettua un primo acquisto crypto di qualsiasi importo (anche 1€).</span></div>
-            <div class="step"><div class="step-num">3</div><span>Ricevi 20€ di bonus in crypto convertibili subito in euro.</span></div>
+            <div class="step"><div class="step-num">1</div><span>Crea l'account e verifica il documento.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Acquista almeno 20€ di <b>SOLANA</b> (commissioni quasi zero).</span></div>
+            <div class="step"><div class="step-num">3</div><span>Ricevi il bonus direttamente nel wallet.</span></div>
         </div>
-        <a href="https://coinbase.com/join/4PDVDNS?src=ios-link" target="_blank" class="btn-main" style="background: #0052ff; color: #fff;">SBLOCCA COINBASE</a>
+        <div class="timer-badge">⏱ TEMPO DI CONSEGNA: 2/3 GIORNI</div>
+        <a href="https://coinbase.com/join/4PDVDNS?src=ios-link" target="_blank" class="btn-main" style="background: #0052ff; color: #fff; margin-top: 15px;">SBLOCCA 20€ ORA</a>
     </div>
 
     <div class="card">
@@ -215,25 +219,25 @@
             <button class="copy-btn" onclick="copy('77620062590929', this)">COPIA</button>
         </div>
         <div class="guide-steps">
-            <div class="step"><div class="step-num">1</div><span>Apri il conto e inserisci il codice nel campo <b>"Passaparola"</b>.</span></div>
-            <div class="step"><div class="step-num">2</div><span>Fai un acquisto di qualsiasi importo con la carta (anche 0,10€).</span></div>
-            <div class="step"><div class="step-num">3</div><span>Ricevi l'accredito cash direttamente sul tuo saldo.</span></div>
+            <div class="step"><div class="step-num">1</div><span>Apri il conto e usa il codice in <b>"Passaparola"</b>.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Fai un acquisto di qualsiasi importo (anche 0,10€).</span></div>
         </div>
-        <a href="https://www.bbva.it/" target="_blank" class="btn-main">SBLOCCA BBVA</a>
+        <div class="timer-badge">⏱ TEMPO DI CONSEGNA: 2/3 GIORNI</div>
+        <a href="https://www.bbva.it/" target="_blank" class="btn-main" style="margin-top: 15px;">SBLOCCA 10€ ORA</a>
     </div>
 
     <div class="card">
-        <h3>BUDDYBANK (50€ CASH)</h3>
+        <h3>BUDDYBANK UNICREDIT (50€ CASH)</h3>
         <div class="copy-box">
             <span class="code-display">B2601MP72BOYH9</span>
             <button class="copy-btn" onclick="copy('B2601MP72BOYH9', this)">COPIA</button>
         </div>
         <div class="guide-steps">
-            <div class="step"><div class="step-num">1</div><span>Scarica l'app e apri il conto "Genius Buddy" con il codice sopra.</span></div>
-            <div class="step"><div class="step-num">2</div><span>Effettua una transazione di almeno 10€ con la carta MyOne.</span></div>
-            <div class="step"><div class="step-num">3</div><span>Il bonus cash verrà accreditato sul tuo nuovo conto.</span></div>
+            <div class="step"><div class="step-num">1</div><span>Apri il conto "Genius Buddy" con il codice amico.</span></div>
+            <div class="step"><div class="step-num">2</div><span>Effettua una transazione di almeno 10€.</span></div>
         </div>
-        <a href="https://www.buddybank.com/" target="_blank" class="btn-main">SBLOCCA BUDDY</a>
+        <div class="timer-badge">⏱ TEMPO DI CONSEGNA: DAI 5 AI 12 GIORNI</div>
+        <a href="https://www.buddybank.com/" target="_blank" class="btn-main" style="margin-top: 15px;">SBLOCCA 50€ ORA</a>
     </div>
 
     <h2 class="section-title">📦 SHOPPING GRATIS</h2>
@@ -245,11 +249,11 @@
             <button class="copy-btn" onclick="copy('8ACGT2HQVT', this)">COPIA</button>
         </div>
         <div class="guide-steps">
-            <div class="step"><div class="step-num">1</div><span>Attiva il piano isyLight (Gratis) dall'app Isybank.</span></div>
-            <div class="step"><div class="step-num">2</div><span>Entra in <b>isyReward</b> e inserisci il codice amico.</span></div>
-            <div class="step"><div class="step-num">3</div><span>Conferma e ricevi il tuo buono Amazon da 30€.</span></div>
+            <div class="step"><div class="step-num">1</div><span>Attiva il piano isyLight (Gratis).</span></div>
+            <div class="step"><div class="step-num">2</div><span>Inserisci il codice amico nella sezione <b>isyReward</b>.</span></div>
         </div>
-        <a href="https://www.isybank.com/" target="_blank" class="btn-main" style="background: #ff9900; color: #fff;">SBLOCCA AMAZON</a>
+        <div class="timer-badge">⏱ TEMPO DI CONSEGNA: 1 SETTIMANA</div>
+        <a href="https://www.isybank.com/" target="_blank" class="btn-main" style="background: #ff9900; color: #fff; margin-top: 15px;">PRENDI IL BUONO</a>
     </div>
 </div>
 
